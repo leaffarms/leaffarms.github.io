@@ -1,5 +1,5 @@
 body {
-	font-size: 20pt;
+	font-size: 18pt;
 	scroll-behavior: smooth;
 }
 
@@ -36,4 +36,17 @@ button .primary {
 
 #about {
 	padding-top: 4em;
+}
+
+#gallery {
+	display: flex;
+	justify-content: center;
+}
+
+#gallery div {
+	width: 30%;
+}
+
+#gallery img {
+	max-width: 400px;
 }
