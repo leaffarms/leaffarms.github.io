@@ -21,7 +21,8 @@
 	--grey9: #E4E7EB;
 	--grey10: #F5F7FA;
 	--green: #c1d72f;
-	--light_green: #dde898;
+	--light_green: #D3E36D;
+	--lighter_green: #dde898;
 } 
 
 
@@ -2171,7 +2172,7 @@ input, select, textarea {
 		.button.primary {
 			background: var(--green);
 			border-color: var(--green);
-			color: #fff !important;
+			color: #262626 !important;
 		}
 
 			input[type="button"].primary:hover,
@@ -2626,7 +2627,7 @@ input, select, textarea {
 		background-position: top left, top right, top left, bottom center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;*/
 		background-size: 25em, 25em, auto, cover;
-		color: #000;
+		color: black;
 		padding: 5em;
 		text-align: center;
 	}
