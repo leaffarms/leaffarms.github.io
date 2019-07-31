@@ -11,7 +11,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta name="google-site-verification" content="K0v3AGHkt5o3vKexvgyr6hdzquWJc1QAt2ognAKp-Dc" />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<!-- <link rel="stylesheet" type="text/css" href="map.css" /> -->
 	<link rel="stylesheet" type="text/css" href="custom.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
@@ -23,7 +22,6 @@
 			<h1 id="logo"><a href="index.html">Leaf Farms Inc.</a></h1>
 			<nav id="nav">
 				<ul>
-					<li><a href="#mission">Mission</a></li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#map">Map</a></li>
 					<li><a href="#produce">Produce</a></li>
@@ -52,7 +50,7 @@
 			<!-- About -->
 			<header class="special container" id="about">
 				<h2>About</h2>
-				<div id="gallery" class="row">
+				<div id="office-images" class="row">
 					<div><img src="images/Leaf_Farms_outside.jpg"></div>
 					<div><img src="images/Leaf_Farms_inside.jpg"></div>
 					<div><img src="images/Leaf_Farms_loading.jpg"></div>
@@ -71,7 +69,7 @@
 			</section>
 
 			<!-- Produce -->
-			<section class="wrapper style1 container special" id="produce">
+<!-- 			<section class="wrapper style1 container special" id="produce">
 				<header class="major"><h2>Produce</h2></header>	
 				<div class="row">
 					<div class="col-3 col-12-narrower">
@@ -102,6 +100,44 @@
 							<header><h3>Herbs</h3></header>
 							<p>Culantro, Thai basil</p>
 						</section>
+					</div>
+				</div>
+			</section> -->
+
+			<section class="wrapper style1 container special" id="produce">
+				<header class="major"><h2>Produce</h2></header>	
+				<div class="gallery-container">
+					<div id="produce-gallery" class="gallery">
+					</div> 
+				</div>
+				<div>
+					<a id="more-produce-button" onclick="showMoreImages(PRODUCE_IMAGES, 5);">Show more</a>
+				</div>
+
+				<div id="photo_modal" class="modal">
+					<div class="modal-header">
+						<div class="modal-count"></div>
+						<div class="modal-close">
+							<a onclick="closeModal();">
+								<img draggable="false" src="images/close.png">
+							</a>
+						</div>
+					</div>
+					<div class="modal-content">
+						<div class="modal-left">
+							<a onclick="previousImage();">
+								<img draggable="false" src="images/left_arrow.png">
+							</a>
+						</div>
+						<div class="modal-right">
+							<a onclick="nextImage();">
+								<img draggable="false" src="images/right_arrow.png">
+							</a>
+						</div>
+						<div class="modal-body"></div>
+					</div>
+					<div class="modal-footer">
+						<div class="modal-caption"></div>
 					</div>
 				</div>
 			</section>
@@ -139,7 +175,7 @@
 				<div class="col-6 col-12-narrower">
 					<section>
 						<div class="gmap-responsive">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.17586390347!2d-80.41724828186173!3d25.53275942615449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9dd65eb3c7a05%3A0x354b0bbbf5ff8254!2sLeaf+Farms!5e0!3m2!1sen!2sus!4v1552049861182" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.17586390347!2d-80.41724828186173!3d25.53275942615449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9dd65eb3c7a05%3A0x354b0bbbf5ff8254!2sLeaf+Farms!5e0!3m2!1sen!2sus!4v1552049861182" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen></iframe>
 						</div>
 					</section>
 				</div>
@@ -149,7 +185,7 @@
 		<!-- Footer -->
 		<footer id="footer">
 			<ul class="copyright">
-				<li>&copy; Leaf Farms, Inc.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				<li>&copy; Leaf Farms, Inc.</li><li>Built by Joyce Y. Chen with <a href="http://html5up.net">HTML5 UP</a></li>
 			</ul>
 		</footer>
 	</div>
@@ -162,12 +198,13 @@
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
-	<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
 	<script src="assets/js/main.js"></script>
 	<script src="map.js"></script>
+	<script src="gallery.js"></script>
 	<script>
 		loadMap();
 		loadMapKey();
+		loadGallery(PRODUCE_IMAGES, 5);
 	</script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-var active_paths = {
+const ACTIVE_PATHS = {
 	canada: {name: "Canada", produce: "Leafy veggies"},
 	florida: {name: "Florida", produce: "Leafy veggies"},
 	mexico: {name: "Mexico", produce: "Mangosteen, Thai banana, Jackfruit"},
@@ -9,7 +9,7 @@ var active_paths = {
 	costa_rica: {name: "Costa Rica", produce: "Culantro"},
 };
 
-var disabled_paths = [
+const DISABLED_PATHS = [
 	"united_states",
 	"nicaragua",
 	"panama",
@@ -30,31 +30,27 @@ function loadMap() {
 	.then(data => {
 		document.getElementById("map-wrapper").innerHTML += data;
 
-		for (var path in active_paths) {
+		for (let path in ACTIVE_PATHS) {
 			document.getElementById(path).classList.add("active");
 		}
 
-		for (var p in disabled_paths) {
-			document.getElementById(disabled_paths[p]).classList.add("disabled");
+		for (let p in DISABLED_PATHS) {
+			document.getElementById(DISABLED_PATHS[p]).classList.add("disabled");
 		}
-
-
-
-	
 	});
 }
 
 function titleCase(str) {
   str = str.toLowerCase().split("_");
-  for (var i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length; i++) {
     str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
   }
   return str.join(" ");
 }
 
 function loadMapKey() {
-	var map_legend = "";
-	for (var path in active_paths) {
+	let map_legend = "";
+	for (let path in ACTIVE_PATHS) {
 		map_legend += "<a class=\"map-buttons\" id=\"" + path + "-button\">" + titleCase(path) + "</a><br>";
 	}
 	document.getElementById("map-key").innerHTML = map_legend;
@@ -64,28 +60,19 @@ function displayMapInfo(id, state) {
 	$(".map-buttons").removeClass("current");
 	$("path").removeClass("current");
 	if (state == true) {
-		var x = active_paths[id];
-		var caption = "<div class=\"map-caption\">" + x.produce + "</div>";
+		let x = ACTIVE_PATHS[id];
+		let caption = "<div class=\"map-caption\">" + x.produce + "</div>";
 		document.getElementById("info-box").innerHTML = caption;
 		document.getElementById("info-box").style.display = "block";
 		document.getElementById("default-info").style.display = "none";
 		document.getElementById(id + "-button").classList.add("current");
 		document.getElementById(id).classList.add("current");
-		// document.getElementById(id + "-button").classList.add("current");
 	} else {
 		document.getElementById("default-info").style.display = "block";
 		document.getElementById("info-box").style.display = "none";
 		document.getElementById(id + "-button").style.backgroundColor = "transparent";
 	}
 }
-
-// $("#map-key").on("mouseenter", "a", function() {
-// 	displayMapInfo(this.id.split("-")[0], true);
-// });
-
-// $("#map-key").on("mouseleave", "a", function() {
-// 	displayMapInfo(this.id.split("-")[0], false);
-// });
 
 $(document).ready(function() {
 	$("#map-key").on("click", "a", function() {
@@ -107,9 +94,9 @@ $(document).ready(function() {
 });
 
 function hasCurrentMapSelection() {
-	var buttons = document.getElementsByClassName("map-buttons");
-	var state = false;
-	for (var b = 0; b < buttons.length; b++) {
+	let buttons = document.getElementsByClassName("map-buttons");
+	let state = false;
+	for (let b = 0; b < buttons.length; b++) {
 		if (buttons[b].classList.contains("current")) {
 			state = true;
 		}

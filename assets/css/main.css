@@ -9,23 +9,27 @@
 
 
 :root {
-	/*Darkest to lightest cool grey*/
-	--grey1: #1F2933;
-	--grey2: #323F4B;
-	--grey3: #3E4C59;
-	--grey4: #52606D;
-	--grey5: #616E7C;
-	--grey6: #7B8794;
-	--grey7: #9AA5B1;
-	--grey8: #CBD2D9;
-	--grey9: #E4E7EB;
-	--grey10: #F5F7FA;
+	/*Darkest to lightest grey*/
+	--grey0: #000000;
+	--grey1: #262626;
+	--grey2: #404040;
+	--grey3: #595959;
+	--grey4: #737373;
+	--grey5: #8c8c8c;
+	--grey6: #a6a6a6;
+	--grey7: #bfbfbf;
+	--grey8: #d9d9d9;
+	--grey9: #f2f2f2;
+	--grey10: #ffffff;
+	--cool_grey1: #e8eef4;
+	--cool_grey2: #f3f6fa;
+	--blue: #3fb1a3;
+	--light_blue: #96dad1;
 	--green: #c1d72f;
-	--light_green: #D3E36D;
+	--light_green: #d3e36d;
 	--lighter_green: #dde898;
 	--banner: #1d1529;
 } 
-
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -103,7 +107,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #f3f6fa;
+		background: var(--cool_grey2);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -118,7 +122,7 @@ input, select, textarea {
 		}
 
 	body, input, select, textarea {
-		color: #7c8081;
+		color: var(--grey5);
 		font-family: 'Lato', sans-serif;
 		font-size: 15pt;
 		font-weight: 300;
@@ -131,7 +135,7 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-		color: #3fb1a3;
+		color: var(--blue);
 		text-decoration: none;
 		border-bottom: dotted 1px;
 	}
@@ -1940,7 +1944,7 @@ input, select, textarea {
 
 			.icon.circle.fa-twitter {
 				background: #70aecd;
-				color: #fff;
+				color: var(--grey10);
 			}
 
 				.icon.circle.fa-twitter:hover {
@@ -1949,7 +1953,7 @@ input, select, textarea {
 
 			.icon.circle.fa-facebook {
 				background: #7490c3;
-				color: #fff;
+				color: var(--grey10);
 			}
 
 				.icon.circle.fa-facebook:hover {
@@ -1958,7 +1962,7 @@ input, select, textarea {
 
 			.icon.circle.fa-google-plus {
 				background: #db6b67;
-				color: #fff;
+				color: var(--grey10);
 			}
 
 				.icon.circle.fa-google-plus:hover {
@@ -1967,7 +1971,7 @@ input, select, textarea {
 
 			.icon.circle.fa-github {
 				background: #dcad8b;
-				color: #fff;
+				color: var(--grey10);
 			}
 
 				.icon.circle.fa-github:hover {
@@ -1976,7 +1980,7 @@ input, select, textarea {
 
 			.icon.circle.fa-dribbble {
 				background: #da83ae;
-				color: #fff;
+				color: var(--grey10);
 			}
 
 				.icon.circle.fa-dribbble:hover {
@@ -2121,8 +2125,8 @@ input, select, textarea {
 			}
 
 			table.default thead {
-				background: #7c8081;
-				color: #fff;
+				background: var(--grey4);
+				color: var(--grey10);
 			}
 
 /* Button */
@@ -2173,7 +2177,7 @@ input, select, textarea {
 		.button.primary {
 			background: var(--green);
 			border-color: var(--green);
-			color: #262626 !important;
+			color: var(--grey1) !important;
 		}
 
 			input[type="button"].primary:hover,
@@ -2181,8 +2185,8 @@ input, select, textarea {
 			input[type="reset"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background: #96dad1 !important;
-				border-color: #96dad1 !important;
+				background: var(--light_blue) !important;
+				border-color: var(--light_blue) !important;
 			}
 
 		input[type="button"].fit,
@@ -2220,7 +2224,7 @@ input, select, textarea {
 			background-position: bottom left, bottom right;
 			background-repeat: no-repeat, no-repeat;
 			background-size: 25em, 25em;
-			color: #fff;
+			color: var(--grey10);
 		}
 
 			.wrapper.style2 input[type="button"]:hover,
@@ -2236,8 +2240,8 @@ input, select, textarea {
 			.wrapper.style2 input[type="reset"].primary,
 			.wrapper.style2 button.primary,
 			.wrapper.style2 .button.primary {
-				background: #fff;
-				border-color: #fff;
+				background: var(--grey10);
+				border-color: var(--grey10);
 				color: var(--green) !important;
 			}
 
@@ -2247,16 +2251,16 @@ input, select, textarea {
 				.wrapper.style2 button.primary:hover,
 				.wrapper.style2 .button.primary:hover {
 					border-color: inherit !important;
-					color: #fff !important;
+					color: var(--grey10) !important;
 				}
 
 		.wrapper.style3 {
-			background: #fff;
+			background: var(--grey10);
 			color: inherit;
 		}
 
 		.wrapper.style4 {
-			background: #fff;
+			background: var(--grey10);
 			color: inherit;
 			padding: 4em;
 		}
@@ -2304,7 +2308,7 @@ input, select, textarea {
 	}
 
 	#header {
-		background: #fff;
+		background: var(--grey10);
 		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075);
 		color: inherit;
 		cursor: default;
@@ -2314,7 +2318,7 @@ input, select, textarea {
 		position: fixed;
 		top: 0;
 		width: 100%;
-		z-index: 10000;
+		z-index: 10;
 	}
 
 		#header h1 {
@@ -2412,7 +2416,7 @@ input, select, textarea {
 			animation: none;
 			background: transparent;
 			box-shadow: none;
-			color: #fff;
+			color: var(--grey10);
 			padding: 2em 2.5em;
 			position: absolute;
 		}
@@ -2431,7 +2435,7 @@ input, select, textarea {
 	.dropotron {
 		list-style: none;
 		padding-left: 0;
-		background: #fff;
+		background: var(--grey10);
 		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075);
 		line-height: 2.25em;
 		min-width: 13em;
@@ -2447,7 +2451,7 @@ input, select, textarea {
 		}
 
 			.dropotron.level-0:before {
-				border-bottom: solid 0.5em #fff;
+				border-bottom: solid 0.5em var(--grey10);
 				border-left: solid 0.5em transparent;
 				border-right: solid 0.5em transparent;
 				content: '';
@@ -2474,7 +2478,7 @@ input, select, textarea {
 
 			.dropotron > li:hover > a {
 				background: var(--green);
-				color: #fff;
+				color: var(--grey10);
 			}
 
 			.dropotron > li:first-child {
@@ -2530,7 +2534,7 @@ input, select, textarea {
 		background-position: bottom left, bottom right, top left, top center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 		background-size: 25em, 25em, auto, cover;
-		color: #fff;
+		color: var(--grey10);
 		cursor: default;
 		padding: 6em 0;
 		text-align: center;
@@ -2546,7 +2550,7 @@ input, select, textarea {
 			-ms-animation-fill-mode: forwards;
 			animation-fill-mode: forwards;
 			background: rgba(52, 27, 43, 0.5);
-			color: #fff;
+			color: var(--grey10);
 			display: inline-block;
 			opacity: 0;
 			padding: 3em;
@@ -2641,8 +2645,8 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		background: #E8EEF4;
-		color: #7c8081;
+		background: var(--cool_grey1);
+		color: var(--grey4);
 		padding: 5em 5em 5em 5em;
 		text-align: center;
 	}
@@ -2987,7 +2991,7 @@ input, select, textarea {
 				position: fixed;
 				top: 0;
 				width: 100%;
-				z-index: 10001;
+				z-index: 11;
 			}
 
 				#navButton .toggle {
@@ -3012,7 +3016,7 @@ input, select, textarea {
 					}
 
 					#navButton .toggle:before {
-						color: #fff;
+						color: var(--grey10);
 						content: '\f0c9';
 						font-size: 1em;
 						height: 40px;
@@ -3056,9 +3060,9 @@ input, select, textarea {
 				position: fixed;
 				top: 0;
 				width: 275px;
-				z-index: 10002;
-				background: #1c2021;
-				color: #fff;
+				z-index: 12;
+				background: var(--grey2);
+				color: var(--grey10);
 				font-size: 0.8em;
 				letter-spacing: 0.075em;
 				text-transform: uppercase;
