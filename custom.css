@@ -82,6 +82,7 @@ button .primary {
 
 #office-images img {
 	max-width: 400px;
+	max-height: 400px;
 }
 
 .gmap-responsive {
