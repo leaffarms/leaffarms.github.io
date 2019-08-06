@@ -37,6 +37,16 @@ function loadMap() {
 		for (let p in DISABLED_PATHS) {
 			document.getElementById(DISABLED_PATHS[p]).classList.add("disabled");
 		}
+
+		$("path").hover(function() {
+			console.log(this);
+			if (hasCurrentMapSelection() == true) {
+				displayMapInfo(this.id, false);
+			} 
+			if (hasCurrentMapSelection() == false) {
+				displayMapInfo(this.id, true);
+			}
+		});
 	});
 }
 
@@ -81,18 +91,6 @@ $(document).ready(function() {
 		} else {
 			displayMapInfo(this.id.split("-")[0], true);
 		}
-	});
-
-	$("#na_map").ready(function() {
-		$("path").hover(function() {
-			console.log(this);
-			if (hasCurrentMapSelection() == true) {
-				displayMapInfo(this.id, false);
-			} 
-			if (hasCurrentMapSelection() == false) {
-				displayMapInfo(this.id, true);
-			}
-		});
 	});
 });
 
