@@ -84,6 +84,7 @@ $(document).ready(function() {
 	});
 
 	$("path").hover(function() {
+		console.log(this);
 		if (hasCurrentMapSelection() == true) {
 			displayMapInfo(this.id, false);
 		} 
