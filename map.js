@@ -83,16 +83,19 @@ $(document).ready(function() {
 		}
 	});
 
-	$("path").hover(function() {
-		console.log(this);
-		if (hasCurrentMapSelection() == true) {
-			displayMapInfo(this.id, false);
-		} 
-		if (hasCurrentMapSelection() == false) {
-			displayMapInfo(this.id, true);
-		}
+	$("#na_map").ready(function() {
+		$("path").hover(function() {
+			console.log(this);
+			if (hasCurrentMapSelection() == true) {
+				displayMapInfo(this.id, false);
+			} 
+			if (hasCurrentMapSelection() == false) {
+				displayMapInfo(this.id, true);
+			}
+		});
 	});
 });
+
 
 function hasCurrentMapSelection() {
 	let buttons = document.getElementsByClassName("map-buttons");
