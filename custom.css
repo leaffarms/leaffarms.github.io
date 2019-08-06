@@ -366,7 +366,7 @@ div.item:nth-child(1) {
 /*--------------MEDIA------------------*/
 @media screen and (max-width: 1680px) {
 	#office-images img {
-		max-width: 350px;
+		max-height: 350px;
 	}
 	.item { 
 		width: 350px;
@@ -426,7 +426,7 @@ div.item:nth-child(1) {
 
 @media screen and (max-width: 530px) {
 	#banner img {
-		max-width: 350px;
+		max-height: 350px;
 	}
 	#office-images img {
 		max-height: 250px;
