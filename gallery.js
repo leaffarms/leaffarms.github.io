@@ -547,10 +547,8 @@ function nextImage() {
 	newImg.className = "modal-img";
 	newImg.setAttribute("data-key", nextImg.key);
 
-	// output.innerHTML = "";
 	output.replaceChild(newImg, img);
 
-	// img.src = nextImg.source;
 	count.innerHTML = nextCount;
 	caption.innerHTML = nextImg.name;
 	newImg.onload = function() {

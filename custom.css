@@ -104,6 +104,7 @@ button .primary {
 	display: block;
 	height: 100%;
 	max-width: 100%;
+	width: 100%;
 }
 
 path:hover {
@@ -246,7 +247,7 @@ div.item:nth-child(1) {
 	width: 100%;
 	bottom: 0;
 	padding: 5%;
-	background-color: rgb(255, 255, 255, 0.7);
+	background-color: rgba(255, 255, 255, 0.7);
 	opacity: 0;
 }
 
