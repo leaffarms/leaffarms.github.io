@@ -5,6 +5,7 @@ body {
 
 h2, h3 {
 	font-weight: bold;
+	font-family: 'Oswald', sans-serif;
 }
 
 header.special h2 + div, header.special h2 + div + p {
@@ -66,12 +67,35 @@ button .primary {
 /*--------------SECTIONS-------------------*/
 #about {
 	padding-top: 4em;
+
+	display: grid;
+	grid-template-rows: 1fr 9fr;
+	grid-template-columns: 3fr 7fr;
+	grid-template-areas: 
+	"about-title about-title" 
+	"about-text about-photos";
+}
+
+#about h2 {
+	grid-area: about-title;
+}
+
+#about-text {
+	grid-area: about-text;
+	display: table;
+	height: 100%;
+}
+
+#about-text p {
+	display: table-cell;
+	vertical-align: middle;
 }
 
 #office-images {
 	display: flex;
 	flex-direction: row wrap;
 	justify-content: center;
+	grid-area: about-photos;
 }
 
 #office-images div {
@@ -82,6 +106,7 @@ button .primary {
 
 #office-images img {
 	max-height: 300px;
+	max-width: 350px;
 }
 
 .gmap-responsive {
@@ -134,8 +159,8 @@ path.current {
 	display: grid;
 	justify-content: stretch;
 	align-content: stretch;
-	grid-template-columns: 60fr 18fr 4fr 18fr;
-	grid-template-areas: "map key . info";
+	grid-template-columns: 40fr 3fr 18fr 3fr 36fr;
+	grid-template-areas: "map . key . info";
 }
 
 #map-wrapper {
@@ -177,7 +202,7 @@ path.current {
 #map-info-wrapper {
 	grid-area: info;
 	padding: 0;
-	font-size: 20pt;
+	font-size: 15pt;
 }
 
 #default-info {
@@ -185,8 +210,11 @@ path.current {
 }
 
 #info-box {
+	margin-left: 20px;
+	margin-right: 20px;
 	display: none;
-	text-align: center;
+	text-align: left;
+	line-height: 1.25;
 }
 
 /*-------------------GALLERY----------------*/

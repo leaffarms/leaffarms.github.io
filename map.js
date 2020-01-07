@@ -1,22 +1,98 @@
 const ACTIVE_PATHS = {
-	canada: {name: "Canada", produce: "Leafy veggies"},
-	florida: {name: "Florida", produce: "Leafy veggies"},
-	mexico: {name: "Mexico", produce: "Mangosteen, Thai banana, Jackfruit"},
-	dominican_republic: {name: "Dominican Republic", produce: "Hot Thai pepper"},
-	puerto_rico: {name: "Puerto Rico", produce: "Green mango"},
-	guatemala: {name: "Guatemala", produce: "Rambutan"},
-	honduras: {name: "Honduras", produce: "Asian vegetables, Indian okra, Rambutan"},
-	costa_rica: {name: "Costa Rica", produce: "Culantro"},
+	canada: {
+		name: "Canada", 
+		produce: [
+			"Sha li Hoa",
+			"Dai Kon",
+			"Shanghai Mieu",
+			"Chinese Spinach",
+			"Yu Choy",
+			"Yu Choy Sum",
+			"Tai Wan Bok Choy (Wawa Choy)",
+		],
+	},
+	florida: {
+		name: "Florida", 
+		produce: [
+			"Avocado",
+			"Canton",
+			"Chive",
+			"Dai Kon",
+			"Dai Kon with Leaf",
+			"Fresh Peanuts",
+			"Finger Hot",
+			"Gongura (Sour Leaf)",
+			"Thai Guava",
+			"Baby Jack Fruit",
+			"Jujube",
+			"June Plum",
+			"June Plum Leaf",
+			"Korean Dai Kon",
+			"Mustard Green (Gai Choy)",
+			"Mint",
+			"Moringa",
+			"Paipew",
+			"Pumpkin Leaf",
+			"Penny Work",
+			"Sugar Cane",
+			"Sapote",
+			"Shanghai Mieu",
+			"Sugar Cane (Peeled)",
+			"Snake Gourd",
+			"Chinese Spinach",
+			"Yu Choy",
+			"Yu Choy Sum",
+			"Vietnamese Mint",
+			"Green Bean",
+			"Tai Wan Bok Choy (Wawa Choy)",
+		],
+	},
+	mexico: {
+		name: "Mexico", 
+		produce: [
+			"Sha Li Hoa",
+			"Jack Fruit",
+			"Malanga Coco",
+			"Mangosteen",
+			"Ataulfo Mango (Marathon Mangoes)",
+		],
+	},
+	dominican_republic: {
+		name: "Dominican Republic",
+		produce: [],
+	},
+	puerto_rico: {
+		name: "Puerto Rico",
+		produce: [],	
+	},
+	guatemala: {
+		name: "Guatemala",
+		produce: [],
+	},
+	honduras: {
+		name: "Honduras", 
+		produce: [
+			"Fancy American Okra",
+		],
+	},
+	costa_rica: {
+		name: "Costa Rica",
+		produce: [],		
+	},
+	panama: {
+		name: "Panama",
+		produce: [],
+	},
 };
 
 const DISABLED_PATHS = [
 	"united_states",
 	"nicaragua",
-	"panama",
 	"haiti",
 	"cuba",
 	"el_savador",
-	"belize"
+	"belize",
+	"Separator"
 ];
 
 function loadMap() {
@@ -39,7 +115,6 @@ function loadMap() {
 		}
 
 		$("path").hover(function() {
-			console.log(this);
 			if (hasCurrentMapSelection() == true) {
 				displayMapInfo(this.id, false);
 			} 
@@ -71,8 +146,37 @@ function displayMapInfo(id, state) {
 	$("path").removeClass("current");
 	if (state == true) {
 		let x = ACTIVE_PATHS[id];
-		let caption = "<div class=\"map-caption\">" + x.produce + "</div>";
-		document.getElementById("info-box").innerHTML = caption;
+		let caption_items = [];
+		for (let i = 0; i < x.produce.length; i++) {
+			caption_items.push(x.produce[i]);
+		}
+
+		for (let i in PRODUCE_IMAGES) {
+			if (PRODUCE_IMAGES[i]["source"].includes(x["name"])) {
+				caption_items.push(PRODUCE_IMAGES[i]["name"]);
+			}
+		}
+
+		let caption = "";
+		if (caption_items.length < 25) {
+			caption += "<ul>";
+			for (let c = 0; c < caption_items.length; c++) {
+				caption += "<li>" + caption_items[c] + "</li>";
+			}
+			caption += "</ul>";
+		} else {
+			caption += "<ul style='width: 50%; float: left; margin-right: 20px; font-size: smaller;'>";
+			for (let c = 0; c < Math.round(caption_items.length/2); c++) {
+				caption += "<li>" + caption_items[c] + "</li>";
+			}
+			caption += "</ul><ul style='width: 40%; float: left; font-size: smaller;'>";
+			for (let c = Math.round(caption_items.length/2) + 1; c < caption_items.length; c++) {
+				caption += "<li>" + caption_items[c] + "</li>";
+			}
+			caption += "</ul>";
+		}
+
+		document.getElementById("info-box").innerHTML = "<div class=\"map-caption\">" + caption + "</div>";
 		document.getElementById("info-box").style.display = "block";
 		document.getElementById("default-info").style.display = "none";
 		document.getElementById(id + "-button").classList.add("current");
