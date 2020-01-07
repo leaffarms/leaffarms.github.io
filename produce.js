@@ -9,8 +9,8 @@ const PRODUCE_IMAGES = {
 	},
 	"american_okra": {
 		name: "American Okra",
-		path: "",
-		thumbnail: "",
+		path: "images/produce/american_okra.jpg",
+		thumbnail: "images/produce/american_okra_thumb.jpg",
 		category: "",
 		source: ["Honduras"],
 		alt: "",
