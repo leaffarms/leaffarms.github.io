@@ -65,46 +65,28 @@ button .primary {
 }
 
 /*--------------SECTIONS-------------------*/
-#about {
-	padding-top: 4em;
-
-	display: grid;
-	grid-template-rows: 1fr 9fr;
-	grid-template-columns: 3fr 7fr;
-	grid-template-areas: 
-	"about-title about-title" 
-	"about-text about-photos";
-}
-
-#about h2 {
-	grid-area: about-title;
+#about-row {
+	margin-left: 1rem;
 }
 
 #about-text {
-	grid-area: about-text;
-	display: table;
-	height: 100%;
-}
-
-#about-text p {
-	display: table-cell;
-	vertical-align: middle;
+	display: flex;
+  	justify-content: center;
+	align-items: center;
+	padding: 0;
 }
 
 #office-images {
 	display: flex;
-	flex-direction: row wrap;
-	justify-content: center;
-	grid-area: about-photos;
-}
-
-#office-images div {
-	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
+	margin: 0;
 }
 
 #office-images img {
+	display: block;
+	flex: 0 0 auto;
+	margin: 0 1em 1em 0;
 	max-height: 300px;
 	max-width: 350px;
 }
@@ -440,6 +422,23 @@ div.item:nth-child(1) {
 }
 
 @media screen and (max-width: 880px) {
+
+	#about-row {
+		margin-left: 0;
+	}
+
+	#about-text {
+		margin: 1em;
+	}
+
+	#office-images {
+		padding: 0;
+	}
+
+	#office-images img {
+		margin-right: 0;
+	}
+
 	.map-buttons {
 		font-size: 12pt;
 	}
